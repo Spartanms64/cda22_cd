@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }))
 /******************************/
 /*** Mise en place du routage */
 
-app.get('/', (req, res) => res.send(`This fake API is running`))
+app.get('/', (req, res) => res.send(`This fake API is running............`))
 
 
 app.get('*', (req, res) => res.status(501).send('What the hell are you doing !?!'))
