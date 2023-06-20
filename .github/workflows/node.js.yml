@@ -3,8 +3,7 @@
 
 name: Node.js CD
 
-on : 
-  workflow_call
+on : workflow_call
   #push:
   #  branches: [ "main" ]
   #workflow_run:
