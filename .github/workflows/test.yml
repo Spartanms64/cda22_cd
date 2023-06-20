@@ -6,9 +6,18 @@ on:
       - 'main'
 
 jobs:
-  tests:
+  hello:
     runs-on: ubuntu-latest
-
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Compile
+        uses: echo Hello world
+      
+  tests:
+    needs: [hello]
+    runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -20,6 +29,10 @@ jobs:
         run: npm ci
       - name: Run test
         run: npm test
+
+  deploy:
+    needs: [tests]
+    uses: ./.github/workflows/node.js.yml
 
 
 
